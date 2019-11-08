@@ -1,0 +1,21 @@
+#working code for one word just saving to try to make it work with multiple words
+
+#Code below works for one word now need to make it work for two words
+
+def translate(firstarg)
+  i = 0
+  vowel = ['a', 'e', 'i', 'o', 'u'] #array
+  str = firstarg
+# is first letter of first word a vowel?
+  if vowel.include?(str.chars[0])
+    return str << 'ay'
+  end
+    # translate word beginning with 2 consonants
+    if (!(vowel.include?(str.chars[1])) && !(vowel.include?(str.chars[0])))
+      return str.chars.rotate(2).join << "ay"
+    else
+    # translate for word beginning with consonant
+    return str.chars.rotate(1).join << "ay"
+    end
+
+end # end definition
